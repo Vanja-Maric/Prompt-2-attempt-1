@@ -3,13 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flower Shop</title>
+    <title>Flower Shop Single Page Application</title>
     <style>
-      /* Reset some default styles */
-      * {
+      /* Reset some default margins and paddings */
+      body, h1, h2, h3, h4, h5, h6, p, form {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
       }
       body {
         font-family: Arial, sans-serif;
@@ -18,52 +17,53 @@
         color: #222;
         padding: 20px;
       }
+      /* Navigation Bar Styles */
       nav {
         background-color: #4a7c59;
-        padding: 10px 20px;
-      }
-      nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: space-around;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 20px;
       }
       nav a {
         color: #fff;
         text-decoration: none;
+        margin-right: 15px;
         font-weight: bold;
       }
       nav a:focus, nav a:hover {
         text-decoration: underline;
       }
-      section {
-        margin: 30px 0;
-        padding: 20px;
-        border: 1px solid #ddd;
-        background-color: #fff;
+      /* Headings styling for a clear hierarchy */
+      h1, h2, h3, h4, h5, h6 {
+        margin-top: 20px;
+        margin-bottom: 10px;
       }
-      section h1, section h2, section h3, section h4 {
-        margin: 15px 0 10px;
-        color: #333;
-      }
-      section p {
+      /* Paragraph styling */
+      p {
         margin-bottom: 20px;
         text-align: justify;
       }
-      img {
+      /* Image gallery styling */
+      .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      .image-gallery img {
         max-width: 100%;
         height: auto;
-        display: block;
-        margin: 10px auto;
+        border: 2px solid #ccc;
+        border-radius: 4px;
       }
+      /* Form styling */
       form {
-        margin-top: 20px;
-        background-color: #f7f7f7;
+        background-color: #eef5ed;
         padding: 15px;
-        border: 1px solid #ccc;
-      }
-      form fieldset {
-        border: none;
-        margin-bottom: 10px;
+        border: 1px solid #ccd9cb;
+        border-radius: 4px;
+        max-width: 500px;
       }
       form label {
         display: block;
@@ -74,160 +74,158 @@
       form select {
         width: 100%;
         padding: 8px;
-        margin-bottom: 10px;
-        border: 1px solid #aaa;
+        margin-bottom: 15px;
+        border: 1px solid #999;
         border-radius: 4px;
       }
       form input[type="radio"],
       form input[type="checkbox"] {
         margin-right: 5px;
       }
-      form button {
-        padding: 10px 20px;
+      form .form-group {
+        margin-bottom: 15px;
+      }
+      form input[type="submit"] {
         background-color: #4a7c59;
         color: #fff;
+        padding: 10px 15px;
         border: none;
         border-radius: 4px;
         cursor: pointer;
       }
-      form button:hover,
-      form button:focus {
-        background-color: #396046;
-      }
-      /* Responsive design */
-      @media (max-width: 600px) {
-        nav ul {
-          flex-direction: column;
-          align-items: center;
-        }
+      form input[type="submit"]:hover,
+      form input[type="submit"]:focus {
+        background-color: #3b654a;
       }
     </style>
   </head>
   <body>
     <!-- Navigation Bar -->
     <nav aria-label="Main Navigation">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
     </nav>
 
     <!-- Home Section -->
-    <section id="home" aria-labelledby="home-heading">
-      <h1>Welcome to Our Flower Shop</h1>
-      <p>
-        Welcome to our flower shop where colors bloom and fragrances enchant visitors. Our shop provides an inviting atmosphere for flower enthusiasts. We offer a remarkable variety of blossoms that celebrate nature. Every arrangement is crafted with precision and care. Our dedicated staff ensures that quality is never compromised. The shop exudes warmth and professionalism in every corner. Customers are greeted with smiles and friendly service as they enter. A passion for horticulture drives our commitment to excellence. The elegant design of our space enhances the beauty of each flower. Your delightful experience is the heart of our business.
-      </p>
-      <h2>Our Story</h2>
-      <p>
-        Our story began with a passion for nature and beauty. The founders envisioned a place where creativity meets tradition. Each step of our journey is filled with dedication and hard work. Generations of expertise have been passed down through the years. Every petal and leaf tells a tale of commitment. Our legacy thrives on community trust and sustainable practices. The narrative of our growth is an inspiration to many. We celebrate every milestone with the same zeal as our first bloom. Our humble beginnings paved the way for brilliant innovations. The story of our shop inspires confidence in every visitor.
-      </p>
-      <h3>Quality Flowers</h3>
-      <p>
-        Quality is the cornerstone of our floral selections. Each flower is sourced with an eye for perfection. Our growers are selected based on their dedication and skill. Every bouquet is a masterpiece of natural design. Customers can enjoy blooms that are both fresh and vibrant. The integrity of our products is maintained through rigorous checks. Our commitment ensures that every stem is a work of art. Detailed inspection and care precede every sale. The quality of our flowers reflects our deep respect for nature. We provide only the best for our valued clientele.
-      </p>
-      <h4>Customer Satisfaction</h4>
-      <p>
-        Customer satisfaction is at the core of our mission. We listen attentively to the needs of each visitor. Every interaction is treated with kindness and attention. Feedback is embraced as a way to improve our service. We strive to exceed expectations at every encounter. Our aim is to cultivate lasting relationships with each customer. The joy of our clients fuels our daily endeavors. Transparent communication is integral to our approach. The happiness of our visitors is the ultimate measure of success. We are committed to ensuring that every customer leaves with a smile.
-      </p>
-    </section>
+    <h1 id="home">Welcome to Our Flower Shop</h1>
+    <p>
+      Welcome to our enchanting flower shop where nature meets art. Our establishment has been serving the community with fresh and vibrant bouquets for years. Every bloom is carefully handpicked by experts with a passion for floriculture. We believe that flowers convey emotions that words sometimes fail to express. Our commitment to quality is evident in every arrangement we craft. We strive to bring a smile to every face with our colorful displays. The fragrance of our seasonal flowers fills the air with joy. Our shop is a haven of natural beauty and artistic expression. We welcome you to experience the charm of our freshly cut blossoms. Visit us and let the magic of flowers brighten your day.
+    </p>
+
+    <h2>Best Quality Flowers</h2>
+    <p>
+      We pride ourselves on offering the best quality flowers available in the market. Every stem is nurtured with care and expertise. Our quality control process ensures that you receive only the freshest blooms. We partner with local growers to maintain consistency and sustainability. Our selection embodies both beauty and resilience in every petal. Each bouquet is arranged to highlight the natural charm of the flowers. Our passion for excellence reflects in our diverse collection. We constantly innovate to bring new varieties to our store. Customer satisfaction is at the heart of our quality promise. Enjoy the elegance of flowers perfected by nature and nurtured by us.
+    </p>
+
+    <h3>Our Story</h3>
+    <p>
+      Our flower shop began as a small family business with a love for nature. The foundation of our story is built on passion and creativity. We started with only a handful of blooms and a modest space. Over the years, we have grown into a beloved community landmark. Our journey is marked by dedication and a commitment to excellence. Every challenge taught us the beauty of perseverance. Our team shares a deep love for all things botanical. We celebrate every season by updating our floral displays. Tradition and innovation walk hand in hand in our story. We invite you to become a part of our ongoing floral adventure.
+    </p>
+
+    <h4>Fresh Arrivals</h4>
+    <p>
+      We bring fresh arrivals to our shop every week ensuring constant variety. Seasonal blooms are showcased with pride and artistry. Our customers enjoy the novelty of new colors and arrangements. We update our collection regularly to reflect the beauty of each season. The freshness of our flowers is guaranteed by careful handling and storage. We work closely with trusted local growers for the best harvest. New blooms inspire creativity in our designers every day. Our commitment to freshness is seen in every bouquet we offer. The garden of possibilities awaits those seeking new floral trends. Experience the delight of always discovering fresh, captivating flowers.
+    </p>
+
+    <h5>Exclusive Bouquets</h5>
+    <p>
+      Our exclusive bouquets are crafted with meticulous attention to detail. Each arrangement is a unique work of art combining color and texture. We use only the finest flowers to create a memorable gift. The design of every bouquet reflects passion and creativity. Our florists are skilled in blending traditional techniques with modern trends. Every exclusive bouquet tells its own enchanting story. We aim to impress with a combination of elegance and originality. Each order is personalized to reflect the recipient’s style. Our exclusive bouquets are perfect for any special occasion. Indulge in a floral creation that speaks to the heart.
+    </p>
+
+    <!-- Image Gallery for Bouquets -->
+    <div class="image-gallery" aria-label="Bouquet Gallery">
+      <img src="tulips.png" alt="Bouquet of tulips" />
+      <img src="roses.png" alt="Bouquet of roses" />
+      <img src="lilies.png" alt="Bouquet of lilies" />
+    </div>
 
     <!-- About Section -->
-    <section id="about" aria-labelledby="about-heading">
-      <h1>About Us</h1>
-      <p>
-        We are a dedicated team of floral experts with deep-rooted passion. Our expertise is built upon years of experience in the industry. Every staff member is committed to providing exceptional service. Our shop is a testimony to creativity and hard work. We believe in the transformative power of flowers. Transparency and integrity underpin every aspect of our operation. Our journey is marked by innovation and perseverance. A welcoming atmosphere is cultivated for every visitor. The story of our growth is interwoven with community support. We take pride in sharing our passion with every customer.
-      </p>
-      <h2>Our Mission</h2>
-      <p>
-        Our mission is to bring beauty and joy through exquisite floral designs. Every bouquet is made with a commitment to excellence. We focus on sustainable practices to benefit nature and society. Our strategies are aligned with environmental responsibility. Innovation and tradition combine in every creation we offer. We endeavor to craft experiences that brighten lives. The ideals behind our mission are driven by passion and care. Every design reflects our dedication to artistic excellence. We aim to be a beacon of quality in the floral industry. Our mission guides us in every decision and arrangement.
-      </p>
-      <h3>Our Values</h3>
-      <p>
-        Integrity and respect form the backbone of our values. We honor every client by listening to their desires. Compassion is evident in each carefully crafted arrangement. Our commitment to sustainability is central to our work. Every decision is influenced by honesty and transparency. We value creativity as a way to celebrate life’s beauty. Teamwork and collaboration help us achieve high standards. Our shop is a haven where passion meets professionalism. The values we uphold nurture trust and loyalty. We continuously strive to embody our core principles in every service.
-      </p>
-      <h4>Community Engagement</h4>
-      <p>
-        Community engagement is essential to our philosophy. We actively participate in local events and charity drives. Our shop hosts workshops that promote floral arts. Collaborations with neighboring businesses create a network of support. We are enthusiastic about giving back to the community. Local schools and organizations benefit from our outreach programs. Volunteering and partnerships strengthen communal bonds. Engagement is fostered through shared passion and genuine care. We celebrate community milestones with heartfelt contributions. Our ongoing commitment is to enrich our local community.
-      </p>
-    </section>
+    <h1 id="about">About Us</h1>
+    <p>
+      Our flower shop is rooted in a tradition of passion and creativity. We are dedicated to providing a superior floral experience for every customer. Our story began with a love for nature and an eye for beauty. With every petal, we deliver a promise of freshness and sincerity. Our team is committed to excellence in every aspect of our service. We believe in building lasting relationships with every visitor. A sense of community guides our efforts and shapes our identity. Our experience in floristry spans many joyful years. We continue to evolve while staying true to our core values. Discover the warmth and expertise that set us apart.
+    </p>
+
+    <h2>Our Mission</h2>
+    <p>
+      Our mission is to bring natural beauty and joy to our community. We aim to deliver exceptional floral artistry with every arrangement. Customer happiness is at the heart of our mission. We stand by quality, creativity, and sustainability. Our flowers are selected with utmost care and precision. We strive to create moments of beauty that touch the soul. Our mission drives us to continuously innovate in design and service. Every bouquet is a celebration of nature’s splendor. We nurture a passion for helping celebrations come to life. Experience our mission in every fragrant blossom we offer.
+    </p>
+
+    <h3>Our History</h3>
+    <p>
+      Our history is filled with the brilliant hues of passion and hard work. We started as a modest flower stall with a big dream. Early challenges were met with unwavering determination and creativity. The evolution of our shop mirrors the beauty of nature itself. Generations have contributed to our longstanding legacy. Each chapter of our history enriches our commitment to excellence. Our journey is celebrated by a loyal community of patrons. The milestones of our past inspire us to reach new heights. We honor our roots while embracing innovation. Our history is a testament to the enduring power of beauty.
+    </p>
+
+    <h4>Team Expertise</h4>
+    <p>
+      Our team is made up of dedicated professionals with a deep love for flowers. Each member brings a unique expertise to our floral creations. We strive to blend artistic vision with practical knowledge. The team’s collaborative spirit elevates our creative processes. Training and experience ensure every arrangement is extraordinary. Their passion is reflected in the meticulous details of every bouquet. We are proud to have experts whose skills inspire trust and admiration. Continuous learning and innovation are at the core of our team ethos. Our collective expertise transforms simple flowers into elegant designs. Trust in our team to deliver beauty and joy with every creation.
+    </p>
 
     <!-- Services Section -->
-    <section id="services" aria-labelledby="services-heading">
-      <h1>Our Floral Services</h1>
-      <p>
-        Our floral services are designed to cater to diverse tastes. We offer a range of arrangements for every occasion. Professional consultation is provided to ensure personalized choices. Every service is delivered with unmatched expertise. Creative design meets technical skill in our work. The quality of our service speaks volumes about our passion. We are dedicated to producing designs that exceed expectations. Comprehensive options accommodate both traditional and modern styles. Detailed planning and execution define our approach. Our service promises beauty, precision, and heartfelt care.
-      </p>
-      <h2>Custom Arrangements</h2>
-      <p>
-        Custom arrangements are tailored to express individual stories. Our experts work closely with clients to capture their vision. Each arrangement is a unique blend of art and emotion. We consider the symbolism of every bloom in our designs. Personalized touches elevate every floral composition. The process is collaborative to ensure satisfaction. Attention to detail transforms ideas into stunning displays. Flexibility and creativity mark the creation of each bouquet. Our custom solutions bring dreams to reality. Every tailored arrangement is a testament to our craftsmanship.
-      </p>
-      <h3>Event Decorations</h3>
-      <p>
-        Our event decorations transform ordinary spaces into floral wonderlands. Celebrations are enhanced by carefully curated designs. Each event is treated with unique attention and style. Flowers are arranged to create dynamic and inviting atmospheres. We work with clients to design décor that matches the event theme. Professional setup and seamless execution are our priorities. Creativity is combined with precision to produce stunning visuals. The decorative installations leave lasting impressions on guests. Our expertise ensures that every event feels special and unique. We turn every celebration into a memorable experience with our artistry.
-      </p>
-      <h4>Seasonal Collections</h4>
-      <p>
-        Seasonal collections showcase the best blooms of each period. Our offerings change to reflect nature’s vibrant cycles. Each collection is carefully curated to celebrate seasonal beauty. Fresh arrivals ensure that every bouquet mirrors current trends. We incorporate seasonal colors and textures into our designs. The collections add diversity and excitement to our portfolio. Clients are invited to explore new inspirations with each season. Expert florists select only the finest specimens available. Our seasonal range is a celebration of nature’s ongoing rhythm. Every collection is designed to capture the essence of the season.
-      </p>
-      <!-- Images for floral bouquets -->
-      <img src="tulips.png" alt="Bouquet of bright tulips" />
-      <img src="roses.png" alt="Bouquet of fragrant roses" />
-      <img src="lilies.png" alt="Bouquet of elegant lilies" />
-    </section>
+    <h1 id="services">Our Services</h1>
+    <p>
+      Our flower shop offers a wide range of services designed to delight and inspire. We provide customized arrangements for every occasion. Our services are driven by a passion for creativity and quality. We pride ourselves on prompt and personalized customer care. From weddings to everyday gifts, our service portfolio is diverse. Our dedicated team ensures each project is handled with professionalism. We offer consultation services to help you choose the perfect bouquet. Our delivery service brings freshness right to your doorstep. The array of services reflects our commitment to excellence. Experience a service that transforms moments into memories.
+    </p>
+
+    <h2>Delivery Options</h2>
+    <p>
+      We offer flexible delivery options to suit your busy lifestyle. Our reliable delivery ensures timely arrival of fresh blooms. Delivery is arranged with care and precision. We offer same-day service in select locations. Tracking options are available so you can know when to expect your order. Each delivery is handled with the utmost attention to detail. Our team ensures that the arrangement maintains its beauty upon arrival. Customer convenience is key in our delivery options. We strive to offer a seamless and positive experience. Enjoy the ease of having nature’s beauty delivered to you.
+    </p>
+
+    <h3>Custom Arrangements</h3>
+    <p>
+      Our custom arrangements are designed to reflect your unique taste. You can collaborate with our expert florists for a personalized creation. Every custom order is treated as a special project. We work with you to select colors, styles, and flower types. The result is an arrangement that is as individual as you are. Our custom arrangements are perfect for events and personal milestones. We bring artistic flair and personal attention to every detail. Collaboration with our team ensures a result beyond expectations. The process is simple, creative, and enjoyable. Let us create a custom floral masterpiece just for you.
+    </p>
 
     <!-- Contact Section -->
-    <section id="contact" aria-labelledby="contact-heading">
-      <h1>Get in Touch</h1>
-      <p>
-        We welcome you to reach out with any inquiries or feedback. Our customer service team is always ready to assist. Communication is prioritized with prompt responses. Every message is acknowledged with genuine care. We value the input and ideas of our visitors. Our channels are open for both compliments and concerns. Engaging with our community is a fundamental part of our service. Each conversation is treated with the utmost respect. We believe in building strong, lasting relationships. Your voice is important to us, and we are here to listen.
-      </p>
-      <h2>Visit Our Store</h2>
-      <p>
-        Our store is located in the heart of the city for easy access. The inviting space is designed to inspire and delight visitors. In-store experiences are arranged to exhibit beauty and creativity. Every corner of the shop reflects our passion for flowers. Visitors are treated to live demonstrations of floral artistry. The ambience is both relaxing and energizing. Comfortable seating areas provide a moment of respite. Friendly staff are available to offer guidance and recommendations. Every visit is an opportunity to experience nature’s best. Our store is a haven for lovers of flowers and art.
-      </p>
-      <h3>Inquiry Form</h3>
-      <p>
-        Please complete the inquiry form below to connect with us. The form is designed for your convenience and clarity. All fields are clearly labeled for ease of use. Detailed instructions assist those using assistive technologies. Your data is handled with care and confidentiality. The submission is quick, straightforward, and secure. Form elements are arranged in a logical and accessible order. Both desktop and mobile users will have an optimal experience. We welcome any questions or special requests through this form. Your inquiry helps us improve our services and cater to your needs.
-      </p>
-      <form aria-labelledby="inquiry-form-heading">
-        <fieldset>
-          <legend class="visually-hidden" id="inquiry-form-heading">Inquiry Form</legend>
-          <label for="name">Name (required):</label>
-          <input type="text" id="name" name="name" required aria-required="true" />
-        </fieldset>
-        <fieldset>
-          <legend>Preferred Contact Method (choose one):</legend>
-          <label>
-            <input type="radio" name="contactMethod" value="email" required aria-required="true" />
-            Email
-          </label>
-          <label>
-            <input type="radio" name="contactMethod" value="phone" required aria-required="true" />
-            Phone
-          </label>
-        </fieldset>
-        <fieldset>
-          <legend>Subscribe to our newsletter:</legend>
-          <label>
-            <input type="checkbox" name="subscribe" value="yes" />
-            Yes, sign me up for updates.
-          </label>
-        </fieldset>
-        <fieldset>
-          <legend>Please select your enquiry type:</legend>
-          <label for="enquiry">Enquiry Type (required):</label>
-          <select id="enquiry" name="enquiry" required aria-required="true">
-            <option value="">--Select an option--</option>
-            <option value="general">General Inquiry</option>
-            <option value="order">Order Question</option>
-            <option value="feedback">Feedback</option>
-          </select>
-        </fieldset>
-        <button type="submit">Submit Inquiry</button>
-      </form>
-    </section>
+    <h1 id="contact">Contact Us</h1>
+    <p>
+      We value every opportunity to connect with our customers and visitors. Reach out to us for any inquiries or orders. Our friendly team is ready to assist you with your floral needs. We are committed to providing prompt and courteous service. Your feedback and questions are important to us. Contacting us is the first step towards a beautiful floral experience. We are here to help you celebrate every moment with nature’s elegance. Our communication channels are open and responsive. We invite you to experience the warmth of our service. Don’t hesitate to get in touch and let us brighten your day.
+    </p>
+
+    <h2>Visit Our Shop</h2>
+    <p>
+      Our shop welcomes visitors with an inviting and vibrant atmosphere. A visit to our store is a journey into a world of natural beauty. The interior is filled with the fragrance of freshly cut blooms. You will discover a range of colors, textures, and fragrances. Our friendly staff is always ready to provide personalized advice. Every corner of our shop is thoughtfully curated to inspire. We invite you to explore and experience the artistry of florals. Our store is accessible and designed with comfort in mind. Visiting us provides an immersive sensory experience. Come and discover the magic that awaits in our flower shop.
+    </p>
+
+    <h3>Customer Care</h3>
+    <p>
+      Our commitment to customer care is evident in every interaction. We strive for excellence in our support and service. Every inquiry is handled with respect and attention. We listen to your needs and provide tailored solutions. Our customer care team is knowledgeable and friendly. We value feedback and continuously work to improve. Support is available through multiple channels for your convenience. Our care extends beyond the sale to ensure your lasting satisfaction. Trust in our dedication to making your experience exceptional. Our customer care is the heart of our business, ensuring smiles with every service.
+    </p>
+
+    <!-- Form -->
+    <form action="#" method="post" aria-labelledby="contact">
+      <div class="form-group">
+        <label for="name">Name <span aria-hidden="true">*</span></label>
+        <input type="text" id="name" name="name" required aria-required="true" />
+      </div>
+      <div class="form-group">
+        <span>Preferred Bouquet:</span>
+        <div>
+          <input type="radio" id="bouquet-tulips" name="bouquet" value="tulips" />
+          <label for="bouquet-tulips">Tulips</label>
+        </div>
+        <div>
+          <input type="radio" id="bouquet-roses" name="bouquet" value="roses" />
+          <label for="bouquet-roses">Roses</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="subscribe" name="subscribe" />
+        <label for="subscribe">Subscribe to newsletter</label>
+      </div>
+      <div class="form-group">
+        <label for="reason">Reason for Contact</label>
+        <select id="reason" name="reason">
+          <option value="inquiry">General Inquiry</option>
+          <option value="order">Place an Order</option>
+          <option value="feedback">Feedback</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
   </body>
 </html>
